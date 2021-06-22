@@ -14,7 +14,7 @@ import com.prantomondal.todoandroidapp.R;
 import java.util.List;
 
 public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
-    private List<ToDoModel> toDoModelList;
+    private List<ToDoModel> todoList;
     private MainActivity activity;
     public ToDoAdapter(MainActivity activity){
         this.activity = activity;
@@ -27,7 +27,16 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
     }
 
     public void onBindViewHolder(ViewHolder holder, int position){
+        ToDoModel item = todoList.get(position);
+        holder.task.setText(item.getTask());
+        holder.task.setChecked(toBoolean(item.getStatus()));
+    }
+    public int getItemCount(){
+        return todoList.size();
+    }
 
+    private boolean toBoolean(int n){
+        return n!=0;
     }
     public static class ViewHolder extends RecyclerView.ViewHolder{
         CheckBox task;
