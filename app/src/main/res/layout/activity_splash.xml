@@ -13,11 +13,20 @@
         android:layout_centerInParent="true"
         android:textColor="@android:color/white"
         android:text="To Do"
-        android:textSize="35dp" />
+        android:textSize="35sp" />
+    <ImageView
+        android:id="@+id/ImgView1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="15dp"
+        android:layout_toStartOf="@+id/toDoTxt"
+        android:src="@drawable/todo" />
+
 
 
     <ImageView
-        android:id="@+id/ImgView"
+        android:id="@+id/ImgView2"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_centerInParent="true"
